@@ -3,9 +3,8 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 1. Colors
 2. General Style
-3. Sections
-3. Utility Classes
-4. About Section
+3. Section Styles
+4. Base SVG
 */
 
 /* 1. Colors
@@ -15,7 +14,10 @@ White Shade             #f7f7f7
 Hacker Orange           #EF5B2E
 Orange Tint             #FCA265 
 Black                   #333
+*/
 
+/* 2. General Style
+––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
 html,
@@ -73,7 +75,7 @@ h4 { font-size: 18pt; }
 p  { font-size: 14pt; }
 
 
-/*  2. Sections
+/*  3. Section Styles
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -158,6 +160,10 @@ section {
 	text-align: center;
 	vertical-align: middle;
 }
+
+/* 4. Base SVG
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 svg {
 	display: inline-block;
