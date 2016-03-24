@@ -1,0 +1,15 @@
+@keyframes tileAnimation {
+	0% { 	fill: #f4f4f4;
+			transform: translate(0px) scale(1, 1);
+		}
+	70% {
+			transform: translate(-25px, -10px) scale(1.05, 1.05)
+	}
+	80% {
+			fill: #EF5B2E;
+	}
+	100%; {
+			fill: #f4f4f4;
+			transform: translate(0px) scale(1, 1);
+	}
+}

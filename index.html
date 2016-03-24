@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+
+	<title>Intro to SVG Animation</title>
+	<link rel="icon" type="image/png" href="./assets/images/favicon.png"/>
+
+	<script type="text/javascript" src="./assets/js/jquery.js"></script>
+	<script type="text/javascript" src="./assets/js/animations.js"></script>
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/animations.css">
+</head>
+<body>
+	<section class="title-screen">
+		<div>
+			<h1>SVG Animation</h1>
+		</div>
+	</section>
+<!-- SMIL Animation Section -->
+	<section>
+		<div class="bar">
+			<header>
+				<h2>SMIL</h2>
+				<p>Depricated</p>
+			</header>
+			<div class="articles">
+				<h3>Articles</h3>
+				<div>
+					<a href="https://css-tricks.com/guide-svg-animations-smil/">
+						<p>A Practical Guide to SMIL</p>
+					</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/begin">
+						<p>SMIL Timing Logic</p>
+					</a>
+					<a href="https://www.w3.org/TR/SMIL2/animation.html#animationNS-SpecifyingTargetElement">
+						<p>Full W3 Documentation</p>
+					</a>
+				</div>
+			</div>
+			<a class="button" href="http://caniuse.com/#feat=svg-smil">
+				<p>Browser Support: SMIL</p>
+			</a>
+		</div>
+		<div class="example"><div>
+			<svg id="smil" x="0px" y="0px" width="640px" height="320px" viewBox="0 0 640 320"
+				xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g id="col1">
+					<polygon points="80,160.002 160.001,120.001 240,160.002 160.001,200.001   "></polygon>
+				</g>
+				<g id="col2">
+					<polygon points="159.793,200.002 239.794,160.001 319.793,200.002 239.795,240  "></polygon>
+					<polygon points="159.793,120.002 239.794,80.002 319.793,120.002 239.795,160.001   "></polygon>
+				</g>
+				<g id="col3">
+					<polygon points="240.208,80.002 320.209,40.002 400.207,80.002 320.209,120.001   "></polygon>
+					<polygon points="239.792,240 319.794,200 399.792,240 319.794,279.999  "></polygon>
+					<polygon points="240,160.002 320.001,120.001 400,160.002 320.001,200.001  "></polygon>
+				</g>
+				<g id="col4">
+					<polygon points="319.793,200.001 399.795,160.001 479.793,200.001 399.795,240  "></polygon>
+					<polygon points="320,120.002 400.002,80.002 480,120.002 400.002,160.001   "></polygon>
+				</g>
+				<g id="col5">
+					<polygon class="col5" points="400,160.002 480.001,120.001 560,160.002 480.002,200.001   "></polygon>
+				</g>
+			 <!-- Animations -->
+				<g>
+				 <!-- Color Animations -->
+				 <!-- Act as timers -->
+					<animate xlink:href="#col1" id="first"  
+						attributeName="fill" 
+						from="#EF5B2E" 
+						to="#EF5B2E"
+						keyTimes="0; 0.8; 1"
+						values="#F4F4F4; #EF5B2E; #F4F4F4;"
+						begin="0s; fifth.begin + .25s" 
+						dur="1s" 
+						repeatCount="1">
+					</animate>
+					<animate xlink:href="#col2" id="second" 
+						attributeName="fill" 
+						begin="first.begin + .25s" 
+						from="#EF5B2E" 
+						to="#F4F4F4"
+						keyTimes="0; 0.8; 1"
+						values="#F4F4F4; #EF5B2E; #F4F4F4;" 
+						dur="1s" 
+						repeatCount="1">
+					</animate>
+					<animate xlink:href="#col3" id="third"  
+						attributeName="fill" 
+						begin="second.begin + .25s" 
+						from="#EF5B2E" 
+						to="#F4F4F4"
+						keyTimes="0; 0.8; 1"
+						values="#F4F4F4; #EF5B2E; #F4F4F4;" 
+						dur="1s" 
+						repeatCount="1">
+					</animate>
+					<animate xlink:href="#col4" id="fourth" 
+						attributeName="fill" 
+						begin="third.begin + .25s" 
+						from="#EF5B2E" 
+						to="#F4F4F4"
+						keyTimes="0; 0.8; 1"
+						values="#F4F4F4; #EF5B2E; #F4F4F4;" 
+						dur="1s" 
+						repeatCount="1">
+					</animate>
+					<animate xlink:href="#col5" id="fifth" 
+						attributeName="fill" 
+						begin="fourth.begin + .25s" 
+						from="#EF5B2E"
+						to="#F4F4F4"
+						keyTimes="0; 0.8; 1"
+						values="#F4F4F4; #EF5B2E; #F4F4F4;" 
+						dur="1s" 
+						repeatCount="1">
+					</animate>
+
+				<!-- Scale + transform Column 1  -->
+					<animateTransform xlink:href="#col1"
+						attributeName="transform"
+						type="scale"
+						from="1"
+						to="1"
+						keyTimes="0; 0.7; 1"
+						values="1; 1.25; 1"
+						begin="first.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+					<animateTransform xlink:href="#col1"
+						attributeName="transform"
+						type="translate"
+						from="0"
+						to="0"
+						keyTimes="0; 0.70; 1"
+						values="0; -20; 0"
+						begin="first.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+				<!-- Scale + transform Column 2  -->
+					<animateTransform xlink:href="#col2"
+						attributeName="transform"
+						type="scale"
+						from="1"
+						to="1"
+						keyTimes="0; 0.70; 1"
+						values="1; 1.25; 1"
+						begin="second.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+					<animateTransform xlink:href="#col2"
+						attributeName="transform"
+						type="translate"
+						from="0"
+						to="0"
+						keyTimes="0; 0.70; 1"
+						values="0; -20; 0"
+						begin="second.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+				<!-- Scale + transform Col3  -->
+					<animateTransform xlink:href="#col3"
+						attributeName="transform"
+						type="scale"
+						from="1"
+						to="1"
+						keyTimes="0; 0.70; 1"
+						values="1; 1.25; 1"
+						begin="third.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+					<animateTransform xlink:href="#col3"
+						attributeName="transform"
+						type="translate"
+						from="0"
+						to="0"
+						keyTimes="0; 0.70; 1"
+						values="0; -20; 0"
+						begin="third.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+				<!-- Scale + transform Col4  -->
+					 <animateTransform xlink:href="#col4"
+						attributeName="transform"
+						type="scale"
+						from="1"
+						to="1"
+						keyTimes="0; 0.70; 1"
+						values="1; 1.25; 1"
+						begin="fourth.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+					<animateTransform xlink:href="#col4"
+						attributeName="transform"
+						type="translate"
+						from="0"
+						to="0"
+						keyTimes="0; 0.70; 1"
+						values="0; -20; 0"
+						begin="fourth.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+				<!-- Scale + transform Col5  -->
+					<animateTransform xlink:href="#col5"
+						attributeName="transform"
+						type="scale"
+						from="1"
+						to="1"
+						keyTimes="0; 0.70; 1"
+						values="1; 1.25; 1"
+						begin="fifth.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+					<animateTransform xlink:href="#col5"
+						attributeName="transform"
+						type="translate"
+						from="0"
+						to="0"
+						keyTimes="0; 0.70; 1"
+						values="0; -20; 0"
+						begin="fifth.begin"
+						dur="1s"
+						repeatCount="1">
+					</animateTransform>
+				</g>
+			</svg>
+		</div></div>
+	</section>
+
+<!-- CSS3 Animation Section -->
+	<section>
+		<div class="bar">
+			<header>
+				<h2>CSS3</h2>
+				<p>With JS Logic</p>
+			</header>
+			<div class="articles">
+				<h3>Articles</h3>
+				<div>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">
+						<p>Animateable CSS Properties</p>
+					</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">
+						<p>CSS Keyframes</p>
+					</a>
+					<a href="https://css-tricks.com/restart-css-animation/">
+						<p>Restart a CSS Animation</p>
+					</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/Events/animationstart">
+						<p>JS Animationstart Event</p>
+					</a>
+					<a href="https://davidwalsh.name/css-animation-callback">
+						<p>JS Browser Support for Animation Events</p>
+					</a>
+				</div>
+			</div>
+			<a class="button" href="http://caniuse.com/#search=CSS3">
+				<p>Browser Support: CSS3</p>
+			</a>
+		</div>
+		<div class="example"><div>
+			<svg id="CSS-example" x="0px" y="0px" width="640px" height="320px" viewBox="0 0 640 320"
+				xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g id="jcol1" class="animate">
+					<polygon points="80,160.002 160.001,120.001 240,160.002 160.001,200.001   "></polygon>
+				</g>
+				<g id="jcol2">
+					<polygon points="159.793,200.002 239.794,160.001 319.793,200.002 239.795,240  "></polygon>
+					<polygon points="159.793,120.002 239.794,80.002 319.793,120.002 239.795,160.001   "></polygon>
+				</g>
+				<g id="jcol3">
+					<polygon points="240.208,80.002 320.209,40.002 400.207,80.002 320.209,120.001   "></polygon>
+					<polygon points="239.792,240 319.794,200 399.792,240 319.794,279.999  "></polygon>
+					<polygon points="240,160.002 320.001,120.001 400,160.002 320.001,200.001  "></polygon>
+				</g>
+				<g id="jcol4">
+					<polygon points="319.793,200.001 399.795,160.001 479.793,200.001 399.795,240  "></polygon>
+					<polygon points="320,120.002 400.002,80.002 480,120.002 400.002,160.001   "></polygon>
+				</g>
+				<g id="jcol5">
+					<polygon class="col5" points="400,160.002 480.001,120.001 560,160.002 480.002,200.001   "></polygon>
+				</g>
+			</svg>
+		</div></div>
+	</section>
+</body>

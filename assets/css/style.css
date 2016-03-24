@@ -1,0 +1,165 @@
+
+/*  Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+1. Colors
+2. General Style
+3. Sections
+3. Utility Classes
+4. About Section
+*/
+
+/* 1. Colors
+––––––––––––––––––––––––––––––––––––––––––––––––––
+White                   #fff
+White Shade             #f7f7f7
+Hacker Orange           #EF5B2E
+Orange Tint             #FCA265 
+Black                   #333
+
+*/
+
+html,
+body,
+html fieldset {
+	border-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	overflow-x:hidden;
+}
+
+body {
+	position: relative;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, p {
+	margin: 0px;
+	font-family: Helvetica, arial, sans-serif;
+	color: inherit;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 125%;
+}
+
+a {
+	font-weight: normal;
+	text-decoration: none;
+	color: #EF5B2E;
+	transition: color               .3s;
+}
+
+a:hover {
+	color: #FCA265;
+}
+
+a.button {
+	display: block;
+	padding: 16px 32px;
+	color: #fff;
+	background-color: #EF5B2E;
+	transition: background-color    .3s;
+}
+
+a.button:hover {
+	background-color: #FCA265;
+}
+
+
+h1 { font-size: 64pt; } 
+h2 { font-size: 32pt; } 
+h3 { font-size: 20pt; }
+h4 { font-size: 18pt; }
+p  { font-size: 14pt; }
+
+
+/*  2. Sections
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+section {
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	height: 100vh;
+	width: 100%;
+}
+
+.title-screen {
+	display: table;
+	height: 100vh;
+	width: 100%;
+	background-color: #EF5B2E;
+	color: #fff;
+}
+
+.title-screen > div {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bar {
+	position: absolute;
+	box-sizing: border-box;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	height: 100%;
+	width: 384px;
+	text-align: center;
+	background-color: #f7f7f7;
+}
+
+.bar > header {
+	padding: 64px 0px;
+	background-color: #00D8C3;
+	color: #fff;
+}
+
+.bar > header p {
+	color: #f4f4f4;
+}
+
+.bar > *:not(header) {
+	margin: 16px;
+}
+
+.articles h3 {
+	padding: 16px;
+	background-color: #9DF4E8;
+	color: #333;
+}
+
+.articles > div {
+	padding: 16px 16px;
+	background-color: #FFF;
+	text-align: left;
+}
+
+.articles p {
+	line-height: 125%;
+	margin-bottom: 8px;
+}
+
+.example {
+	display: table;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	padding-left: 384px;
+	flex: 1;
+	-webkit-flex: 1;    
+}
+
+.example > div {
+	width: 100%;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+svg {
+	display: inline-block;
+	fill: #f4f4f4;
+}
